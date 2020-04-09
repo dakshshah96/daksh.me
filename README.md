@@ -40,12 +40,6 @@ A starter skeleton with advanced features for [Gatsby](https://github.com/gatsby
 
 ## Lighthouse Audit Score
 
-<div align="center">
-    <a href="https://developers.google.com/web/tools/lighthouse/">
-      <img src="docs/pwa-score.png" alt="Lighthouse Score" />
-    </a>
-</div>
-
 Check out the [Features](#features) to read about all [Progressive Web App](https://developers.google.com/web/progressive-web-apps) capabilities of this starter in detail.
 
 ## Why?
