@@ -1,8 +1,9 @@
 {
-  "name": "gatsby-starter-advanced",
-  "description": "GatsbyJS starter that includes examples for advanced use cases.",
-  "version": "1.1.0",
-  "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
+  "name": "daksh.me",
+  "description": "Personal website of Daksh Shah",
+  "version": "1.0.0",
+  "author": "Daksh Shah <dakshshah96@gmail.com>",
+  "repository": "git@github.com:dakshshah96/daksh.me",
   "dependencies": {
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
@@ -50,7 +51,10 @@
     "write-good": "^1.0.1"
   },
   "keywords": [
-    "gatsby"
+    "daksh shah",
+    "web dev",
+    "tech",
+    "blog"
   ],
   "license": "MIT",
   "main": "n/a",
