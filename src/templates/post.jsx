@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import Layout from "../layout";
 import UserInfo from "../components/UserInfo/UserInfo";
 import PostTags from "../components/PostTags/PostTags";
-import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
 import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
@@ -33,7 +32,6 @@ export default class PostTemplate extends React.Component {
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <div className="post-meta">
               <PostTags tags={post.tags} />
-              <SocialLinks postPath={slug} postNode={postNode} />
             </div>
             <UserInfo config={config} />
             <Footer config={config} />
