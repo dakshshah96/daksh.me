@@ -1,19 +1,17 @@
-import React from "react";
-import Helmet from "react-helmet";
-import config from "../../data/SiteConfig";
-import "./index.css";
+import React from 'react'
+import Helmet from 'react-helmet'
+import config from '../../data/SiteConfig'
+import './index.css'
 
-export default class MainLayout extends React.Component {
-  render() {
-    const { children } = this.props;
-    return (
-      <div className="layout-container">
-        <Helmet>
-          <meta name="description" content={config.siteDescription} />
-          <html lang="en" />
-        </Helmet>
-        {children}
-      </div>
-    );
-  }
+export default function MainLayout({ children }) {
+  return (
+    <div className="layout-container">
+      <Helmet>
+        <meta name="description" content={config.siteDescription} />
+        <html lang="en" />
+      </Helmet>
+      <div className="font-bold text-red-500">Tailwind is working!</div>
+      {children}
+    </div>
+  )
 }
