@@ -1,17 +1,23 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
+import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 import config from '../../data/SiteConfig'
+import favicon from '../favicon.png'
 import './index.css'
 
-export default function MainLayout({ children }) {
+export default function MainLayout(props) {
+  const { children } = props
+
   return (
-    <div className="layout-container">
+    <>
       <Helmet>
         <meta name="description" content={config.siteDescription} />
-        <html lang="en" />
+        <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
-      <div className="font-bold text-red-500">Tailwind is working!</div>
-      {children}
-    </div>
+      <Navigation />
+      <main>{children}</main>
+      <Footer />
+    </>
   )
 }
