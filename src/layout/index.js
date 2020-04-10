@@ -15,7 +15,7 @@ export default function MainLayout(props) {
         <meta name="description" content={config.siteDescription} />
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
-      <Navigation />
+      <Navigation menuLinks={config.menuLinks} />
       <main>{children}</main>
       <Footer />
     </>

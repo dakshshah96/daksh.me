@@ -15,6 +15,20 @@ const config = {
   userName: 'Daksh',
   userEmail: 'dakshshah96@gmail.com',
   userTwitter: 'dakshshah96',
+  menuLinks: [
+    {
+      name: 'About',
+      link: '/about/',
+    },
+    {
+      name: 'Articles',
+      link: '/blog/',
+    },
+    {
+      name: 'Contact',
+      link: '/contact/',
+    },
+  ],
   themeColor: '#c62828',
   backgroundColor: '#e0e0e0',
 }
