@@ -1,23 +1,23 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import Layout from "../layout";
-import UserInfo from "../components/UserInfo/UserInfo";
-import PostTags from "../components/PostTags/PostTags";
-import SEO from "../components/SEO/SEO";
-import Footer from "../components/Footer/Footer";
-import config from "../../data/SiteConfig";
-import "./b16-tomorrow-dark.css";
-import "./post.css";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import Layout from '../layout'
+import UserInfo from '../components/UserInfo'
+import PostTags from '../components/PostTags'
+import SEO from '../components/SEO'
+import Footer from '../components/Footer'
+import config from '../../data/SiteConfig'
+import './b16-tomorrow-dark.css'
+import './post.css'
 
 export default class PostTemplate extends React.Component {
   render() {
-    const { data, pageContext } = this.props;
-    const { slug } = pageContext;
-    const postNode = data.markdownRemark;
-    const post = postNode.frontmatter;
+    const { data, pageContext } = this.props
+    const { slug } = pageContext
+    const postNode = data.markdownRemark
+    const post = postNode.frontmatter
     if (!post.id) {
-      post.id = slug;
+      post.id = slug
     }
 
     return (
@@ -38,7 +38,7 @@ export default class PostTemplate extends React.Component {
           </div>
         </div>
       </Layout>
-    );
+    )
   }
 }
 
@@ -62,4 +62,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
