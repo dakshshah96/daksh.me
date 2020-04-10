@@ -6,7 +6,11 @@ require('typeface-inter')
 
 export default function HTML(props) {
   return (
-    <html lang="en" {...props.htmlAttributes}>
+    <html
+      lang="en"
+      {...props.htmlAttributes}
+      className="antialiased text-gray-900 font-display"
+    >
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
