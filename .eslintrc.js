@@ -35,6 +35,12 @@ module.exports = {
         "singleQuote": true
       }
     ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js"]
+      }
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   }
