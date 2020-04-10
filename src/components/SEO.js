@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import urljoin from 'url-join'
 import moment from 'moment'
 import config from '../../data/SiteConfig'
