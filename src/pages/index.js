@@ -3,8 +3,10 @@ import { Helmet } from 'react-helmet'
 import { Link } from 'gatsby'
 import GitHubButton from 'react-github-btn'
 import Layout from '../layout'
+import ProjectListing from '../components/ProjectListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
+import projects from '../../data/projects'
 import daksh from '../images/daksh.png'
 
 export default function Index() {
@@ -49,6 +51,10 @@ export default function Index() {
           </GitHubButton>
         </div>
       </div>
+      <section className="max-w-4xl px-4 m-auto mt-20">
+        <h2 className="mb-10 text-3xl font-bold">Open Source Projects</h2>
+        <ProjectListing projects={projects} />
+      </section>
     </Layout>
   )
 }
