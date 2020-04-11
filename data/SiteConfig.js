@@ -6,7 +6,8 @@ const config = {
   siteUrl: 'https://daksh.me',
   repo: 'https://github.com/dakshshah96/daksh.me',
   pathPrefix: '',
-  siteDescription: 'Daksh Shah is a full stack software developer.',
+  siteDescription:
+    'Daksh Shah is a full stack software developer and currently heads software at Tilt. He loves writing about JavaScript, Node.js and anything related to the modern web in general.',
   siteRss: '/rss.xml',
   googleAnalyticsID: 'UA-47311644-5',
   dateFromFormat: 'YYYY-MM-DD',
