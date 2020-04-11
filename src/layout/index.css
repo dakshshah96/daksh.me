@@ -1,3 +1,17 @@
+/* use tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* utility: justify-self */
+@responsive {
+  .justify-self-start {
+    justify-self: start;
+  }
+  .justify-self-end {
+    justify-self: end;
+  }
+  .justify-self-center {
+    justify-self: center;
+  }
+}
