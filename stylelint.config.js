@@ -7,6 +7,6 @@ module.exports = {
         ignoreAtRules: ['tailwind'],
       },
     ],
-    indentation: 4,
+    indentation: 2,
   },
 }
