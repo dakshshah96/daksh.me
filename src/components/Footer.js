@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="flex items-center justify-between h-32 max-w-4xl px-4 m-auto">
+    <footer className="flex items-center justify-between h-32 max-w-4xl px-4 m-auto my-16">
       <div className="flex">
         <a
           href="https://www.buymeacoffee.com/dakshshah96"
