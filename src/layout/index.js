@@ -16,7 +16,7 @@ export default function MainLayout(props) {
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
       <Navigation menuLinks={config.menuLinks} />
-      <main>{children}</main>
+      <main className="pt-20">{children}</main>
       <Footer />
     </>
   )
