@@ -61,7 +61,7 @@ export default function PostTemplate({ data, pageContext }) {
 
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
       </article>
-      <UserInfo config={config} />
+      <UserInfo />
     </Layout>
   )
 }
