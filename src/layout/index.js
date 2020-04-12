@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
@@ -20,4 +21,8 @@ export default function MainLayout(props) {
       <Footer />
     </>
   )
+}
+
+MainLayout.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.node).isRequired,
 }
