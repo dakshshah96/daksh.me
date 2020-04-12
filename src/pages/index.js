@@ -28,11 +28,25 @@ export default function Index() {
               href="https://www.tilt.bike/about/"
               target="_blank"
               rel="noopener noreferrer"
+              className="font-bold text-indigo-500"
             >
               Tilt
             </a>
-            . I love <Link to="/blog/">writing</Link> about JavaScript, Node.js
-            and anything related to the modern web in general.
+            . I love working on{' '}
+            <a
+              href="https://github.com/dakshshah96"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-indigo-500"
+            >
+              open source
+            </a>{' '}
+            projects and{' '}
+            <Link to="/blog/" className="font-bold text-indigo-500">
+              writing
+            </Link>{' '}
+            about JavaScript, Node.js, and anything related to the modern web in
+            general.
           </p>
         </div>
         <div className="flex flex-col items-center justify-center w-1/3">
