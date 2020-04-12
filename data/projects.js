@@ -11,4 +11,10 @@ export default [
     description:
       'A set of scripts to quickly generate a HTTPS certificate for your local development environment.',
   },
+  {
+    title: 'Razorpay Checkout JS',
+    url: 'https://github.com/tiltbike/razorpay-checkout-js',
+    description:
+      "An unofficial loading wrapper for Razorpay's checkout.js library.",
+  },
 ]
