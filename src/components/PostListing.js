@@ -1,36 +1,50 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
-class PostListing extends React.Component {
-  getPostList() {
-    const postList = [];
-    this.props.postEdges.forEach(postEdge => {
+export default function PostListing({ postEdges }) {
+  const getPostList = () => {
+    const postList = []
+    postEdges.forEach((postEdge) => {
       postList.push({
         path: postEdge.node.fields.slug,
-        tags: postEdge.node.frontmatter.tags,
-        cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
-      });
-    });
-    return postList;
+        timeToRead: postEdge.node.timeToRead,
+      })
+    })
+    return postList
   }
+  const postList = getPostList()
 
-  render() {
-    const postList = this.getPostList();
-    return (
-      <div>
-        {/* Your post list here. */
-        postList.map(post => (
-          <Link to={post.path} key={post.title}>
-            <h1>{post.title}</h1>
-          </Link>
-        ))}
-      </div>
-    );
-  }
+  return (
+    <section>
+      {postList.map((post) => (
+        <Link to={post.path} key={post.title}>
+          <h1>{post.title}</h1>
+        </Link>
+      ))}
+    </section>
+  )
 }
 
-export default PostListing;
+PostListing.propTypes = {
+  postEdges: PropTypes.arrayOf(
+    PropTypes.shape({
+      node: PropTypes.shape({
+        fields: PropTypes.shape({
+          date: PropTypes.string,
+          slug: PropTypes.string,
+        }).isRequired,
+        excerpt: PropTypes.string,
+        timeToRead: PropTypes.number,
+        frontmatter: PropTypes.shape({
+          date: PropTypes.string,
+          template: PropTypes.string,
+          title: PropTypes.string,
+        }).isRequired,
+      }),
+    }).isRequired
+  ).isRequired,
+}

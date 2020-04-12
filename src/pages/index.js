@@ -1,15 +1,18 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import GitHubButton from 'react-github-btn'
 import Layout from '../layout'
+import PostListing from '../components/PostListing'
 import ProjectListing from '../components/ProjectListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import projects from '../../data/projects'
 import daksh from '../images/daksh.png'
 
-export default function Index() {
+export default function Index({ data }) {
+  const latestPostEdges = data.latest.edges
+
   return (
     <Layout>
       <Helmet title={`${config.siteTitle} – Full Stack Software Developer`} />
@@ -66,9 +69,39 @@ export default function Index() {
         </div>
       </div>
       <section className="max-w-4xl px-4 m-auto mt-20">
+        <h2 className="mb-10 text-3xl font-bold">Latest Posts</h2>
+        <PostListing postEdges={latestPostEdges} />
+      </section>
+      <section className="max-w-4xl px-4 m-auto mt-20">
         <h2 className="mb-10 text-3xl font-bold">Open Source Projects</h2>
         <ProjectListing projects={projects} />
       </section>
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    latest: allMarkdownRemark(
+      limit: 5
+      sort: { fields: [fields___date], order: DESC }
+      filter: { frontmatter: { template: { eq: "post" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            date
+            template
+          }
+        }
+      }
+    }
+  }
+`
