@@ -59,6 +59,7 @@ export default function PostTemplate({ data, pageContext }) {
           </div>
         </header>
 
+        {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
       </article>
       <UserInfo />
