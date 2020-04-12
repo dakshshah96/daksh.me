@@ -12,7 +12,6 @@ const config = {
   googleAnalyticsID: 'UA-47311644-5',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'MMMM Do, YYYY',
-  postsPerPage: 4,
   userName: 'Daksh',
   userEmail: 'dakshshah96@gmail.com',
   userTwitter: 'dakshshah96',
