@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import GitHubButton from 'react-github-btn'
@@ -116,3 +117,27 @@ export const pageQuery = graphql`
     }
   }
 `
+
+Index.propTypes = {
+  data: PropTypes.shape({
+    latest: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            excerpt: PropTypes.string,
+            timeToRead: PropTypes.number,
+            fields: PropTypes.shape({
+              slug: PropTypes.string,
+              date: PropTypes.string,
+            }).isRequired,
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string,
+              date: PropTypes.string,
+              template: PropTypes.string,
+            }).isRequired,
+          }).isRequired,
+        })
+      ).isRequired,
+    }),
+  }).isRequired,
+}
