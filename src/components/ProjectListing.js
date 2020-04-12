@@ -10,7 +10,7 @@ export default function ProjectListing({ projects }) {
           key={project.title}
           className="grid items-center grid-cols-4 gap-4 py-6 border-b-2 border-gray-200 last:border-b-0"
         >
-          <h3 className="col-span-1 text-xl font-medium leading-tight">
+          <h3 className="col-span-1 text-xl font-medium leading-tight text-gray-800">
             <a href={project.url} target="_blank" rel="noopener noreferrer">
               <div>{project.title}</div>
             </a>
