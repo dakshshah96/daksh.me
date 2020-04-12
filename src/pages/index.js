@@ -31,7 +31,7 @@ export default function Index({ data }) {
               href="https://www.tilt.bike/about/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-indigo-500"
+              className="font-bold text-indigo-500 hover:text-indigo-700"
             >
               Tilt
             </a>
@@ -40,12 +40,15 @@ export default function Index({ data }) {
               href="https://github.com/dakshshah96"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-indigo-500"
+              className="font-bold text-indigo-500 hover:text-indigo-700"
             >
               open source
             </a>{' '}
             projects and{' '}
-            <Link to="/blog/" className="font-bold text-indigo-500">
+            <Link
+              to="/blog/"
+              className="font-bold text-indigo-500 hover:text-indigo-700"
+            >
               writing
             </Link>{' '}
             about JavaScript, Node.js, and anything related to the modern web in
