@@ -27,16 +27,8 @@ export default function Index({ data }) {
             </span>
           </h1>
           <p className="text-2xl text-gray-600">
-            I’m a full stack software developer and I currently head software at{' '}
-            <a
-              href="https://www.tilt.bike/about/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold text-indigo-500 hover:text-indigo-700"
-            >
-              Tilt
-            </a>
-            . I love working on{' '}
+            I’m a full stack software developer and entrepreneur from India. I
+            love working on{' '}
             <a
               href="https://github.com/dakshshah96"
               target="_blank"
