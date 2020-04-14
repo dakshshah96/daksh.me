@@ -23,7 +23,7 @@ export default function PostListing({ postEdges }) {
       {postList.map((post) => (
         <Link to={post.path} key={post.title}>
           <div className="py-4">
-            <h3 className="text-xl font-medium leading-tight text-gray-800">
+            <h3 className="text-xl font-semibold leading-tight text-gray-700 hover:text-gray-900">
               {post.title}
             </h3>
           </div>
