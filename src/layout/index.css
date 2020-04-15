@@ -15,3 +15,11 @@
     justify-self: center;
   }
 }
+
+/* component: PostListing */
+.post-listing div {
+  border-bottom: 2px solid #EDF2F7;
+}
+.post-listing:last-child div {
+  border-bottom: none;
+}
