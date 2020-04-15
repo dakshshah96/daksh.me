@@ -15,7 +15,11 @@ export default function BlogPage({ data }) {
       <Helmet title={`Blog | ${config.siteTitle}`} />
       <SEO />
       <section className="max-w-4xl px-4 m-auto">
-        <h1 className="mb-10 text-4xl font-bold">Blog</h1>
+        <h1 className="mb-10 text-4xl font-bold">
+          <span className="pb-1 border-b-4 border-indigo-500 border-dashed">
+            Blog
+          </span>
+        </h1>
         <DetailedPostListing postEdges={latestPostEdges} />
       </section>
     </Layout>

@@ -12,9 +12,8 @@ export default function AboutPage() {
       <SEO />
       <section className="max-w-4xl px-4 m-auto">
         <h1 className="mb-10 text-4xl font-bold">
-          Hey, I’m Daksh{' '}
-          <span role="img" aria-label="Hey">
-            👋
+          <span className="pb-1 border-b-4 border-indigo-500 border-dashed">
+            About
           </span>
         </h1>
         <p className="mb-8 text-lg">
