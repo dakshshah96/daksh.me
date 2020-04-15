@@ -21,7 +21,7 @@ const config = {
       link: '/about/',
     },
     {
-      name: 'Articles',
+      name: 'Blog',
       link: '/blog/',
     },
     {
