@@ -1,6 +1,7 @@
 ---
 date: 2020-04-14
 title: 'Getting Started with Vue - An Overview and Walkthrough Tutorial'
+description: 'The only guide you will ever need to learn Vue'
 template: post
 slug: getting-started-with-vue
 ---

@@ -1,6 +1,7 @@
 ---
 date: 2020-04-12
 title: 'How to get HTTPS working on your local development environment in 5 minutes'
+description: 'Learn how to get HTTPS working in 5 minutes. Amazing!'
 template: post
 slug: https-local-development-environment
 ---

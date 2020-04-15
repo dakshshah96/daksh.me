@@ -1,6 +1,7 @@
 ---
 date: 2020-04-13
 title: 'Replace axios with a simple custom fetch wrapper'
+description: 'Why use axios when there are better alternatives?'
 template: post
 slug: replace-axios-with-a-simple-custom-fetch-wrapper
 ---
