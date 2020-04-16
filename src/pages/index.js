@@ -26,7 +26,7 @@ export default function Index({ data }) {
               👋
             </span>
           </h1>
-          <p className="text-2xl text-gray-600">
+          <p className="text-xl text-gray-600">
             I’m a full stack software developer and entrepreneur from India. I
             love working on{' '}
             <a
