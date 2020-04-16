@@ -16,7 +16,7 @@ export default function AboutPage() {
             About
           </span>
         </h1>
-        <p className="mb-8 text-lg">
+        <p className="mb-8 text-lg text-gray-700">
           I’m a full stack software developer and entrepreneur from India. Born
           in 1996, I grew up in India and later Kuwait. After graduating high
           school in 2014, I spent the next few years studying computer science
@@ -34,7 +34,7 @@ export default function AboutPage() {
           how to code on the internet and ultimately dropped out of college in
           2017 to continue self-learning.
         </p>
-        <p className="mb-8 text-lg">
+        <p className="mb-8 text-lg text-gray-700">
           I joined{' '}
           <a
             href="https://www.tilt.bike/about"
@@ -62,7 +62,7 @@ export default function AboutPage() {
           </Link>
           .
         </p>
-        <p className="text-lg">
+        <p className="text-lg text-gray-700">
           I’m deeply involved with Node.js, Vue, React and the JavaScript
           ecosystem in general at and outside of work. These are the topics that
           are covered in most of my technical posts. I’m also excited to start

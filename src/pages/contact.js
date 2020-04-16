@@ -36,7 +36,7 @@ export default function AboutPage() {
             Contact
           </span>
         </h1>
-        <p className="mb-8 text-lg">
+        <p className="mb-8 text-lg text-gray-700">
           Feel free to contact me using the form below. I read every single
           email I receive and will try to respond to you as soon as possible.
         </p>
