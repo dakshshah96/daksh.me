@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function GithubButton() {
+export default function GitHubFollowButton() {
   return (
     <a
       href="https://github.com/dakshshah96"
