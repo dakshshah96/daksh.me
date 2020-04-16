@@ -7,8 +7,24 @@ import config from '../../data/SiteConfig'
 
 export default function AboutPage() {
   const { register, handleSubmit, errors } = useForm({ mode: 'onBlur' })
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      )
+      .join('&')
+  }
   const onSubmit = (data) => {
-    console.log(data)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'contact',
+        ...data,
+      }),
+    })
+      .then(() => console.log('form submitted'))
+      .catch((error) => alert(error))
   }
 
   return (
@@ -28,8 +44,14 @@ export default function AboutPage() {
         <form
           className="w-full max-w-sm"
           name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit(onSubmit)}
         >
+          <label htmlFor="bot-field" className="hidden">
+            Don’t fill this out if you are human: <input name="bot-field" />
+          </label>
           <label className="block mb-6 font-bold text-gray-700" htmlFor="name">
             <div className="mb-1">Name</div>
             <input
