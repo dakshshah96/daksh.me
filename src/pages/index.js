@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import GitHubButton from 'react-github-btn'
+import TwitterFollowButton from '../components/TwitterFollowButton'
 import GitHubFollowButton from '../components/GitHubFollowButton'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
@@ -48,7 +48,14 @@ export default function Index({ data }) {
             about JavaScript, Node.js, and anything related to the modern web in
             general.
           </p>
-          <GitHubFollowButton />
+          <div className="flex">
+            <div className="mr-4">
+              <GitHubFollowButton />
+            </div>
+            <div>
+              <TwitterFollowButton />
+            </div>
+          </div>
         </div>
         <div className="flex flex-col items-center justify-center w-1/3">
           <img
