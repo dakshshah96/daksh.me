@@ -2,8 +2,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-require('typeface-inter')
-
 export default function HTML(props) {
   return (
     <html
