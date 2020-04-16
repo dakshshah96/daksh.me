@@ -17,6 +17,7 @@ export default function Navigation({ menuLinks }) {
               key={link.name}
               to={link.link}
               className="px-4 py-2 mx-1 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-900"
+              activeClassName="bg-gray-200 text-gray-900"
             >
               {link.name}
             </Link>
