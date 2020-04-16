@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import GitHubButton from 'react-github-btn'
+import GitHubFollowButton from '../components/GitHubFollowButton'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import ProjectListing from '../components/ProjectListing'
@@ -26,7 +27,7 @@ export default function Index({ data }) {
               👋
             </span>
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="mb-6 text-xl text-gray-600">
             I’m a full stack software developer and entrepreneur from India. I
             love working on{' '}
             <a
@@ -47,6 +48,7 @@ export default function Index({ data }) {
             about JavaScript, Node.js, and anything related to the modern web in
             general.
           </p>
+          <GitHubFollowButton />
         </div>
         <div className="flex flex-col items-center justify-center w-1/3">
           <img
@@ -54,14 +56,6 @@ export default function Index({ data }) {
             alt="Daksh"
             className="w-40 h-40 mb-5 border-4 border-gray-300 border-solid rounded-full"
           />
-          <GitHubButton
-            href="https://github.com/dakshshah96"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Follow @dakshshah96 on GitHub"
-          >
-            dakshshah96
-          </GitHubButton>
         </div>
       </div>
       <section className="max-w-4xl px-4 m-auto mt-20">
