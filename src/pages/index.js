@@ -61,7 +61,7 @@ export default function Index({ data }) {
           <img
             src={daksh}
             alt="Daksh"
-            className="w-40 h-40 mb-5 border-4 border-gray-300 border-solid rounded-full"
+            className="w-40 h-40 mb-5 border-4 border-gray-200 border-solid rounded-full"
           />
         </div>
       </div>
