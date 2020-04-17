@@ -15,8 +15,8 @@ export default function UserInfo() {
             Thanks for reading!
           </h3>
           <p className="mb-8 text-indigo-100">
-            Hi, I’m Daksh, a full stack software engineer and the author of this
-            post. If you enjoyed reading this post or anything else I’ve
+            Hi, I’m Daksh, a full stack software engineer and entrepreneur from
+            India. If you enjoyed reading this post or anything else I’ve
             written, please consider supporting me!
           </p>
           <a
