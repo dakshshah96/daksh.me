@@ -23,3 +23,9 @@
 .post-listing:last-child div {
   border-bottom: none;
 }
+
+/* component: UserInfo */
+.user-info-box-gradient {
+  background: rgb(60,54,107);
+  background: linear-gradient(153deg, rgba(60,54,107,1) 0%, rgba(67,65,144,1) 50%, rgba(76,81,191,1) 100%);
+}
