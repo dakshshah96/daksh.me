@@ -8,7 +8,7 @@ export default function UserInfo() {
         <img
           src={daksh}
           alt="Daksh"
-          className="w-24 h-24 mr-8 border-4 border-indigo-300 border-solid rounded-full"
+          className="w-24 h-24 mr-8 border-4 border-indigo-800 border-solid rounded-full"
         />
         <div>
           <h3 className="mb-5 text-xl font-bold text-indigo-100">
