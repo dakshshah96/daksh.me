@@ -3,7 +3,7 @@ import daksh from '../images/daksh.png'
 
 export default function UserInfo() {
   return (
-    <aside className="max-w-4xl px-4 py-10 m-auto mt-16 mb-10 rounded-lg user-info-box-gradient">
+    <aside className="max-w-4xl px-4 py-10 m-auto mt-16 mb-10 rounded-lg shadow-lg user-info-box-gradient">
       <div className="flex px-4">
         <img
           src={daksh}
