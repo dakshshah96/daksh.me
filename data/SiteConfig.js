@@ -9,7 +9,7 @@ const config = {
   siteDescription:
     'Daksh Shah is a full stack software developer and currently heads software at Tilt. He loves writing about JavaScript, Node.js and anything related to the modern web in general.',
   siteRss: '/rss.xml',
-  googleAnalyticsID: 'UA-47311644-5',
+  googleAnalyticsID: 'UA-94132115-1',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'MMMM Do, YYYY',
   userName: 'Daksh',
