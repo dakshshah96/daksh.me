@@ -6,6 +6,7 @@ export default function GitHubFollowButton() {
       href="https://github.com/dakshshah96"
       target="_blank"
       rel="noopener noreferrer"
+      className="follow-button"
     >
       <div className="inline-block px-3 py-2 text-gray-900 bg-gray-200 rounded-md hover:bg-gray-300">
         <svg

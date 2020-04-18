@@ -24,6 +24,11 @@
   border-bottom: none;
 }
 
+/* component: GitHubFollowButton, TwitterFollowButton */
+.follow-button:active div {
+  @apply shadow-inner;
+}
+
 /* component: UserInfo */
 .user-info-box-gradient {
   background: rgb(60,54,107);
