@@ -1,5 +1,6 @@
 import React from 'react'
 import daksh from '../images/daksh.png'
+import bmc from '../images/bmc-logo.svg'
 
 export default function UserInfo() {
   return (
@@ -25,11 +26,7 @@ export default function UserInfo() {
             rel="noopener noreferrer"
             href="https://www.buymeacoffee.com/dakshshah96"
           >
-            <img
-              src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
-              alt="Buy me a coffee"
-              className="w-5"
-            />
+            <img src={bmc} alt="Buy me a coffee" className="w-5" />
             <span className="ml-3 text-lg font-medium">Buy me a coffee</span>
           </a>
         </div>
