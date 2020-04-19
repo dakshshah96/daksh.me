@@ -18,17 +18,17 @@ A quick Google search later, I found several articles like [this](https://devcen
 
 ![](../images/connection-not-private-chrome.png)
 
-# The problem
+## The problem
 
 All the detailed instructions I had found were correct for the time they were written. Not anymore.
 
 After a ton of Googling, I discovered that the reason for my local certificate getting rejected was that [Chrome had deprecated support for commonName matching in certificates](https://groups.google.com/a/chromium.org/forum/m/#!topic/security-dev/IGT2fLJrAeo), in effect, requiring a subjectAltName since January 2017.
 
-# The solution
+## The solution
 
 We’ll be using [OpenSSL](https://www.openssl.org/) to generate all of our certificates.
 
-## Step 1: Root SSL certificate
+### Step 1: Root SSL certificate
 
 The first step is to create a Root Secure Sockets Layer (SSL) certificate. This root certificate can then be used to sign any number of certificates you might generate for individual domains. If you aren’t familiar with the SSL ecosystem, [this article from DNSimple](https://support.dnsimple.com/articles/what-is-ssl-root-certificate/) does a good job of introducing Root SSL certificates.
 
@@ -46,7 +46,7 @@ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 
 ![](../images/generate-root-ca-terminal.png)
 
-## Step 2: Trust the root SSL certificate
+### Step 2: Trust the root SSL certificate
 
 Before you can use the newly created Root SSL certificate to start issuing domain certificates, there’s one more step. You need to to tell your Mac to trust your root certificate so all individual certificates issued by it are also trusted.
 
@@ -56,7 +56,7 @@ Your certificate should look something like this inside Keychain Access if you�
 
 ![](../images/trust-root-ca-keychain.png)
 
-## Step 3: Domain SSL certificate
+### Step 3: Domain SSL certificate
 
 The root SSL certificate can now be used to issue a certificate specifically for your local development environment located at `localhost`.
 
@@ -105,7 +105,7 @@ openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateseria
 
 ![](../images/generate-domain-ca-terminal.png)
 
-# Use your new SSL certificate
+## Use your new SSL certificate
 
 You’re now ready to secure your `localhost` with HTTPS. Move the `server.key` and `server.crt` files to an accessible location on your server and include them when starting your server.
 
