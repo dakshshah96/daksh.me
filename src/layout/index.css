@@ -61,6 +61,8 @@
   @apply text-indigo-700;
 }
 .post :not(pre)>code {
+  @apply text-gray-800;
+
   background: rgba(0,0,0,.07);
   padding: 2px 3px;
   border-radius: 5px;
