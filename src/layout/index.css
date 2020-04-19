@@ -68,5 +68,5 @@
   border-radius: 5px;
 }
 .post code[class*="language-"], .post pre[class*="language-"], .post pre code {
-  @apply my-8 whitespace-pre-wrap;
+  @apply my-8 whitespace-pre-wrap rounded-md;
 }
