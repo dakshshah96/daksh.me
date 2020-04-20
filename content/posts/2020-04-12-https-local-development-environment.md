@@ -6,13 +6,13 @@ template: post
 slug: https-local-development-environment
 ---
 
-_This article was originally written for [freeCodeCamp.org](https://medium.com/free-code-camp/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec)._
+_This article was originally written for [freeCodeCamp.org](https://medium.com/free-code-camp/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec). This post has been cleaned up and updated to reflect new changes made in the GitHub repo._
 
 Almost any website you visit today is protected by HTTPS. If yours isn’t yet, [it should be](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). Securing your server with HTTPS also means that you can’t send requests to this server from one that isn’t protected by HTTPS. This poses a problem for developers who use a local development environment because all of them run on `http://localhost` out-of-the-box.
 
 ![](../images/listening-443-terminal.png)
 
-At the startup I’m a part of, we decided to secure our AWS Elastic Load Balancer endpoints with HTTPS as part of a move to enhance security. I ran into a situation where my local development environment’s requests to the server started getting rejected.
+At Tilt, a few years ago, we decided to secure our AWS Elastic Load Balancer endpoints with HTTPS as part of a move to enhance security. I ran into a situation where my local development environment’s requests to the server started getting rejected.
 
 A quick Google search later, I found several articles like [this](https://devcenter.heroku.com/articles/ssl-certificate-self), [this](https://www.kevinleary.net/self-signed-trusted-certificates-node-js-express-js/) or [this one](https://blog.praveen.science/securing-your-localhost/) with detailed instructions on how I could implement HTTPS on `localhost`. None of these instructions seemed to work even after I followed them religiously. Chrome always threw a `NET::ERR_CERT_COMMON_NAME_INVALID` error at me.
 
@@ -22,7 +22,7 @@ A quick Google search later, I found several articles like [this](https://devcen
 
 All the detailed instructions I had found were correct for the time they were written. Not anymore.
 
-After a ton of Googling, I discovered that the reason for my local certificate getting rejected was that [Chrome had deprecated support for commonName matching in certificates](https://groups.google.com/a/chromium.org/forum/m/#!topic/security-dev/IGT2fLJrAeo), in effect, requiring a subjectAltName since January 2017.
+After a ton of Googling, I discovered that the reason for my local certificate getting rejected was that [Chrome had deprecated support for commonName matching in certificates](https://groups.google.com/a/chromium.org/forum/m/#!topic/security-dev/IGT2fLJrAeo), in effect, requiring a `subjectAltName` since January 2017.
 
 ## The solution
 
@@ -46,11 +46,11 @@ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 7300 -out rootCA.pem
 
 ### Step 2: Trust the root SSL certificate
 
-Before you can use the newly created Root SSL certificate to start issuing domain certificates, there’s one more step. You need to to tell your Mac to trust your root certificate so all individual certificates issued by it are also trusted.
+Before you can use the newly created Root SSL certificate to start issuing domain certificates, there’s one more step. You need to tell macOS to trust your root certificate so all individual certificates issued by it are also trusted.
 
-Open Keychain Access on your Mac and go to the Certificates category in your System keychain. Once there, import the `rootCA.pem` using File > Import Items. Double click the imported certificate and change the “When using this certificate:” dropdown to **Always Trust** in the Trust section.
+Open **Keychain Access** on your Mac and go to the **Certificates** category in your **System** keychain. Once there, import the `rootCA.pem` using File > Import Items. Double click the imported certificate and change the “When using this certificate:” dropdown to **Always Trust** in the Trust section.
 
-Your certificate should look something like this inside Keychain Access if you’ve correctly followed the instructions till now.
+If you’ve correctly followed these instructions, the certificate should look like this inside Keychain Access.
 
 ![](../images/trust-root-ca-keychain.png)
 
@@ -111,6 +111,22 @@ You’re now ready to secure your `localhost` with HTTPS. Move the `server.key` 
 
 In an Express app written in Node.js, here’s how you would do it. Make sure you do this only for your local environment. **Do not use this in production**.
 
-![](../images/https-local-dev-chrome.png)
+<div class="filename">index.js</div>
+
+```js
+var path = require('path')
+var fs = require('fs')
+var express = require('express')
+var https = require('https')
+
+var certOptions = {
+  key: fs.readFileSync(path.resolve('build/cert/server.key')),
+  cert: fs.readFileSync(path.resolve('build/cert/server.crt'))
+}
+
+var app = express()
+
+var server = https.createServer(certOptions, app).listen(443)
+```
 
 I hope you found this tutorial useful. If you’re not comfortable with running the commands given here by yourself, I’ve created a set of handy scripts you can run quickly to generate the certificates for you. More details can be found on the [local-cert-generator GitHub repo](https://github.com/dakshshah96/local-cert-generator/).
