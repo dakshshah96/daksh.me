@@ -5,7 +5,7 @@
 
 /* cursor selection */
 ::selection {
-  @apply text-gray-900 bg-indigo-200;
+  @apply bg-indigo-200;
 }
 
 /* utility: justify-self */
