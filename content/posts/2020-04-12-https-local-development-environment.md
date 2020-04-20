@@ -62,6 +62,8 @@ The root SSL certificate can now be used to issue a certificate specifically for
 
 Create a new OpenSSL configuration file `server.csr.cnf` so you can import these settings when creating a certificate instead of entering them on the command line.
 
+<div class="filename">server.csr.cnf</div>
+
 ```
 [req]
 default_bits = 2048
@@ -80,6 +82,8 @@ CN = localhost
 ```
 
 Create a `v3.ext` file in order to create a [X509 v3 certificate](https://en.wikipedia.org/wiki/X.509). Notice how we’re specifying `subjectAltName` here.
+
+<div class="filename">v3.ext</div>
 
 ```
 authorityKeyIdentifier=keyid,issuer

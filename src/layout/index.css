@@ -78,3 +78,8 @@
 .post :not(pre)>code::selection {
   @apply text-gray-900 bg-indigo-200;
 }
+.post .filename {
+  @apply px-4 py-2 font-bold text-gray-100 bg-gray-900 rounded-t-md;
+
+  margin-bottom: -2.2rem;
+}
