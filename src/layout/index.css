@@ -75,3 +75,6 @@
 .post code[class*="language-"], .post pre[class*="language-"], .post pre code {
   @apply my-8 text-base whitespace-pre-wrap rounded-md;
 }
+.post :not(pre)>code::selection {
+  @apply text-gray-900 bg-indigo-200;
+}
