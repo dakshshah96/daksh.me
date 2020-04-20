@@ -105,8 +105,6 @@ A certificate signing request is issued via the root SSL certificate we created 
 openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 825 -sha256 -extfile v3.ext
 ```
 
-![](../images/generate-domain-ca-terminal.png)
-
 ## Use your new SSL certificate
 
 You’re now ready to secure your `localhost` with HTTPS. Move the `server.key` and `server.crt` files to an accessible location on your server and include them when starting your server.
