@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* cursor selection */
+::selection {
+  @apply text-gray-900 bg-indigo-200;
+}
+
 /* utility: justify-self */
 @responsive {
   .justify-self-start {
