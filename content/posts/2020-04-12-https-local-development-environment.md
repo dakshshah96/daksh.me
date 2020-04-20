@@ -38,10 +38,10 @@ Generate a RSA-2048 key and save it to a file `rootCA.key`. This file will be us
 openssl genrsa -des3 -out rootCA.key 2048
 ```
 
-You can use the key you generated to create a new Root SSL certificate. Save it to a file named `rootCA.pem`. This certificate will have a validity of 1,024 days. Feel free to change it to any number of days you want. You’ll also be prompted for other optional information.
+You can use the key you generated to create a new Root SSL certificate. Save it to a file named `rootCA.pem`. This certificate will have a validity of 20 years. Feel free to change it to any number of days you want. You’ll also be prompted for other optional information.
 
 ```bash
-openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 7300 -out rootCA.pem
 ```
 
 ### Step 2: Trust the root SSL certificate
@@ -99,10 +99,10 @@ Create a certificate key for `localhost` using the configuration settings stored
 openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config <( cat server.csr.cnf )
 ```
 
-A certificate signing request is issued via the root SSL certificate we created earlier to create a domain certificate for `localhost`. The output is a certificate file called `server.crt`.
+A certificate signing request is issued via the root SSL certificate we created earlier to create a domain certificate for `localhost`. The output is a certificate file called `server.crt`. We're going to give the domain certificate a validity of 825 days to adhere to [Apple's security requirements](https://support.apple.com/en-us/HT210176).
 
 ```bash
-openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile v3.ext
+openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 825 -sha256 -extfile v3.ext
 ```
 
 ![](../images/generate-domain-ca-terminal.png)
