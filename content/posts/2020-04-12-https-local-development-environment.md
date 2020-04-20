@@ -44,8 +44,6 @@ You can use the key you generated to create a new Root SSL certificate. Save it 
 openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 ```
 
-![](../images/generate-root-ca-terminal.png)
-
 ### Step 2: Trust the root SSL certificate
 
 Before you can use the newly created Root SSL certificate to start issuing domain certificates, there’s one more step. You need to to tell your Mac to trust your root certificate so all individual certificates issued by it are also trusted.
