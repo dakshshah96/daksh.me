@@ -29,10 +29,10 @@ export default function AboutPage() {
           >
             NIT Surat
           </a>
-          . But, as it turns out, I was never really good at “cracking” the
-          Indian education system. I spent most of my time in college learning
-          how to code on the internet and ultimately dropped out of college in
-          2017 to continue self-learning.
+          . I was never really good at “cracking” the Indian education system
+          and spent most of my time in college learning how to code on the
+          internet. I ultimately decided to drop out of college in 2017 to
+          continue self-learning.
         </p>
         <p className="mb-8 text-lg text-gray-700">
           I joined{' '}
@@ -44,9 +44,9 @@ export default function AboutPage() {
           >
             Tilt
           </a>{' '}
-          in late 2017 when we were still called Pedal and had a few pilot
-          projects. Being a part of a small core team, I am what Tilt needs me
-          to be. I also build all of the software at our little company.{' '}
+          in late 2017 back when we were still called Pedal. Being a part of a
+          small core team, I am what Tilt needs me to be. I also build all of
+          the software at our little company.{' '}
           <a
             href="https://basecamp.com/about/policies/until-the-end-of-the-internet"
             target="_blank"
@@ -55,27 +55,17 @@ export default function AboutPage() {
           >
             Building a sustainable business for the long-haul
           </a>{' '}
-          has been a life changing experience and something I aim to write about
-          on{' '}
+          has been a life changing experience and something I want to write
+          about on{' '}
           <Link to="/blog/" className="font-bold hover:text-indigo-500">
             my blog
           </Link>
           .
         </p>
         <p className="text-lg text-gray-700">
-          I’m deeply involved with Node.js, Vue, React and the JavaScript
-          ecosystem in general at and outside of work. These are the topics that
-          are covered in most of my technical posts. I’m also excited to start
-          my{' '}
-          <a
-            href="https://www.swyx.io/writing/learn-in-public/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold hover:text-indigo-500"
-          >
-            learning in public
-          </a>{' '}
-          journey by writing regularly here.
+          I’m deeply involved with Node.js, GraphQL, Vue, React and the
+          JavaScript ecosystem in general at and outside of work. Naturally,
+          these are the topics that most of my technical posts are based on.
         </p>
       </section>
     </Layout>
