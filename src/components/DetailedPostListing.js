@@ -35,7 +35,6 @@ export default function DetailedPostListing({ postEdges }) {
             <time className="text-sm text-gray-600">
               {formatDate(post.date)}
             </time>
-            <p className="mt-6 text-gray-700">{post.description}</p>
           </div>
         </Link>
       ))}
