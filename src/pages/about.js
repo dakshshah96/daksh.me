@@ -63,9 +63,9 @@ export default function AboutPage() {
           .
         </p>
         <p className="text-lg text-gray-700">
-          I’m deeply involved with Node.js, GraphQL, Vue, React and the
-          JavaScript ecosystem in general at and outside of work. Naturally,
-          these are the topics that most of my technical posts are based on.
+          My current focus is Node.js, GraphQL, React and the JavaScript
+          ecosystem in general at and outside of work. Naturally, these are the
+          topics that most of my technical posts are also based on.
         </p>
       </section>
     </Layout>
