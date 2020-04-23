@@ -63,9 +63,8 @@ export default function AboutPage() {
           .
         </p>
         <p className="text-lg text-gray-700">
-          My current focus is Node.js, GraphQL, React and the JavaScript
-          ecosystem in general at and outside of work. Naturally, these are the
-          topics that most of my technical posts are also based on.
+          Though constantly changing, my focus right now is on Node.js, GraphQL,
+          React and the JavaScript ecosystem in general.
         </p>
       </section>
     </Layout>
