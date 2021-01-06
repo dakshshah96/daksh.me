@@ -11,3 +11,12 @@
 [[redirects]]
   from = "/dotfiles"
   to = "https://github.com/dakshshah96/dotfiles"
+[[redirects]]
+  from = "/github"
+  to = "https://github.com/dakshshah96/"
+[[redirects]]
+  from = "/twitter"
+  to = "https://twitter.com/dakshshah96"
+[[redirects]]
+  from = "/linkedin"
+  to = "https://www.linkedin.com/in/dakshshah/"
