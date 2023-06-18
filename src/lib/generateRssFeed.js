@@ -1,4 +1,5 @@
 import ReactDOMServer from 'react-dom/server'
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 
@@ -30,7 +31,9 @@ export async function generateRssFeed() {
   for (let article of articles) {
     let url = `${siteUrl}/articles/${article.slug}`
     let html = ReactDOMServer.renderToStaticMarkup(
-      <article.component isRssFeed />
+      <MemoryRouterProvider>
+        <article.component isRssFeed />
+      </MemoryRouterProvider>
     )
 
     feed.addItem({

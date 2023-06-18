@@ -1,4 +1,5 @@
-import Image from 'next/future/image'
+import { Fragment, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
@@ -6,7 +7,6 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
-import { Fragment, useEffect, useRef } from 'react'
 
 function CloseIcon(props) {
   return (
@@ -262,6 +262,10 @@ export function Header() {
       document.documentElement.style.setProperty(property, value)
     }
 
+    function removeProperty(property) {
+      document.documentElement.style.removeProperty(property)
+    }
+
     function updateHeaderStyles() {
       let { top, height } = headerRef.current.getBoundingClientRect()
       let scrollY = clamp(
@@ -286,6 +290,16 @@ export function Header() {
       } else if (top === 0) {
         setProperty('--header-height', `${scrollY + height}px`)
         setProperty('--header-mb', `${-scrollY}px`)
+      }
+
+      if (top === 0 && scrollY > 0 && scrollY >= downDelay) {
+        setProperty('--header-inner-position', 'fixed')
+        removeProperty('--header-top')
+        removeProperty('--avatar-top')
+      } else {
+        removeProperty('--header-inner-position')
+        setProperty('--header-top', '0px')
+        setProperty('--avatar-top', '0px')
       }
     }
 
@@ -331,7 +345,7 @@ export function Header() {
     window.addEventListener('resize', updateStyles)
 
     return () => {
-      window.removeEventListener('scroll', updateStyles, { passive: true })
+      window.removeEventListener('scroll', updateStyles)
       window.removeEventListener('resize', updateStyles)
     }
   }, [isHomePage])
@@ -355,29 +369,37 @@ export function Header() {
               className="top-0 order-last -mb-3 pt-3"
               style={{ position: 'var(--header-position)' }}
             >
-              <div className="relative">
-                <AvatarContainer
-                  className="absolute left-0 top-3 origin-left transition-opacity"
-                  style={{
-                    opacity: 'var(--avatar-border-opacity, 0)',
-                    transform: 'var(--avatar-border-transform)',
-                  }}
-                />
-                <Avatar
-                  large
-                  className="block h-16 w-16 origin-left"
-                  style={{ transform: 'var(--avatar-image-transform)' }}
-                />
+              <div
+                className="top-[var(--avatar-top,theme(spacing.3))] w-full"
+                style={{ position: 'var(--header-inner-position)' }}
+              >
+                <div className="relative">
+                  <AvatarContainer
+                    className="absolute left-0 top-3 origin-left transition-opacity"
+                    style={{
+                      opacity: 'var(--avatar-border-opacity, 0)',
+                      transform: 'var(--avatar-border-transform)',
+                    }}
+                  />
+                  <Avatar
+                    large
+                    className="block h-16 w-16 origin-left"
+                    style={{ transform: 'var(--avatar-image-transform)' }}
+                  />
+                </div>
               </div>
             </Container>
           </>
         )}
         <div
           ref={headerRef}
-          className="top-0 z-10 pt-6"
+          className="top-0 z-10 h-16 pt-6"
           style={{ position: 'var(--header-position)' }}
         >
-          <Container>
+          <Container
+            className="top-[var(--header-top,theme(spacing.6))] w-full"
+            style={{ position: 'var(--header-inner-position)' }}
+          >
             <div className="relative flex gap-4">
               <div className="flex flex-1">
                 {!isHomePage && (
